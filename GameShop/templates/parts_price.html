@@ -1,0 +1,15 @@
+{% extends 'menu.html' %}
+
+{% block title %} {{ block.super }} -- Запчасти и ГСМ {% endblock %}
+
+{% block pagename %} Запчасти и горюче-смазочные материалы {% endblock %}
+
+{% block content %}
+    <h2>Прайс-лист:</h2>
+    <p></p>
+    <ul>
+        {% for p_ in parts %}
+            <li>{{ p_ }} <button>Купить</button></li>
+        {% endfor %}
+    </ul>
+{% endblock %}

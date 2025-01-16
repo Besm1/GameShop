@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>"Эх, прокачу!"</title>
+    <link rel = "stylesheet" type="text/css" href='{% static "style.css" %}'>
+</head>
+<body>
+    <h1>{% block pagename %} {{ block.super }} {% endblock %}</h1>
+    <p></p>
+    <nav>
+        {% block menu %}
+            <a href="/autoshop/">Главная</a><br>
+            <a href="/autoshop/parts/">Запчасти и горюче-смазочные материалы</a><br>
+            <a href="/autoshop/service/">Сервисные работы и прочие услуги ;)</a><br>
+        {% endblock %}
+    </nav>
+
+    <p></p>
+
+    {% block content %} {{ block.super }} {% endblock %}
+</body>
+</html>
