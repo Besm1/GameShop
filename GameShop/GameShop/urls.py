@@ -1,5 +1,5 @@
 """
-URL configuration for GameShop project.
+URL configuration for Game project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.1/topics/http/urls/
@@ -16,20 +16,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from ..task1.views import
-from task1.views import func_template, ClassTemplate
-# from task3.views import AutoShop, Service, SpareParts
-from task4.views import AutoShop, Service, SpareParts
-from task5.views import sign_up_by_html, sign_up_by_django
+from task1.views import Shop, Goods, Basket, sign_up_by_django, shop_entry
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-
-    , path('', func_template)
-    , path('class/', ClassTemplate.as_view())
-    , path('autoshop/', AutoShop.as_view())
-    , path('autoshop/service/', Service.as_view())
-    , path('autoshop/parts/', SpareParts.as_view())
-    , path('sendhtml/',sign_up_by_html)
-    , path('senddj/',sign_up_by_django)
+    path('admin/', admin.site.urls)
+    , path('', shop_entry)
+    , path('shop/', Shop.as_view())
+    , path('shop/goods/', Goods.as_view())
+    , path('shop/basket/', Basket.as_view())
+    , path('register/',sign_up_by_django)
 ]

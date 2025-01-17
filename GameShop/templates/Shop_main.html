@@ -1,0 +1,15 @@
+{% extends 'menu.html' %}
+
+{% block pagename %} {{ block.super }} Торговый зал магазина{% endblock %}
+
+{% block menu %}
+    {{ block.super }}
+    <a href="/">Выйти из магазина</a>
+{% endblock %}
+
+{% block content %}
+<br>
+<br>Рады приветствовать Вас в нашем магазине!
+<br>Мы предлагаем Вам крутые игры!
+<br>Смотрите каталог, выбирайте, и - деньги на стол!
+{% endblock %}

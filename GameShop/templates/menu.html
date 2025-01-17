@@ -1,9 +1,9 @@
-{% load static %}
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>"Эх, прокачу!"</title>
+    <title>Деньги на стол! {% block title %} {% endblock %}</title>
     <link rel = "stylesheet" type="text/css" href='{% static "style.css" %}'>
 </head>
 <body>
@@ -11,14 +11,17 @@
     <p></p>
     <nav>
         {% block menu %}
-            <a href="/autoshop/">Главная</a><br>
-            <a href="/autoshop/parts/">Запчасти и горюче-смазочные материалы</a><br>
-            <a href="/autoshop/service/">Сервисные работы и прочие услуги ;)</a><br>
+            <a href="/shop/">Торговый зал</a><br>
+            <a href="/shop/goods/">Каталог настольных игр</a><br>
+            <a href="/shop/basket/">Корзина</a><br>
         {% endblock %}
     </nav>
 
     <p></p>
 
     {% block content %} {{ block.super }} {% endblock %}
+
+    <footer> {% include "footer.html" %} </footer>
+
 </body>
 </html>

@@ -7,7 +7,9 @@
 <body>
     <form method = "post" action = " ">
         {% csrf_token %}
-        {{ form.as_p }}
+        <table>
+            {{ form.as_table }}
+        </table>
         <br><br><br><button type="submit">Зарегистрироваться</button>
         <br><br>{{ error }}
     </form>
