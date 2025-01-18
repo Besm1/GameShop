@@ -1,12 +1,13 @@
 from itertools import repeat
 
+from django.core.paginator import Paginator
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.views.generic import TemplateView
 
 
 from .forms import UserRegister
-from .models import Buyer, Game
+from .models import Buyer, Game, News
 from utils.password_utils import hash_password
 
 # Create your views here.
@@ -18,6 +19,13 @@ form = None
 
 def shop_entry(request):
     return render(request, 'shop_entry.html')
+
+def news(request):
+    posts = News.objects.all().order_by('-date')
+    paginator = Paginator(object_list=posts, per_page=3)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+    return render(request, 'news.html', {'news': page_obj})
 
 
 def sign_up_by_django(request):
@@ -69,3 +77,5 @@ class Goods(TemplateView):
     #                  , 'Коктейль фирменный "Эх, прокачу!" ... 500 руб. ...'
     #                  , 'Виски "Johnny Driver" ... 750 руб. ...'
     #                  ]}
+
+

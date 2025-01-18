@@ -1,5 +1,6 @@
 from django.db import models
-from django.db.models import CharField, DecimalField, IntegerField, TextField, BooleanField, ManyToManyField, BinaryField
+from django.db.models import CharField, DecimalField, IntegerField, TextField, BooleanField, ManyToManyField, \
+    BinaryField, DateField, DateTimeField
 
 from hashlib import sha256
 
@@ -25,3 +26,11 @@ class Game(models.Model):
     def __str__(self):
         return self.title
 
+
+class News(models.Model):
+    title = CharField(max_length=100)
+    content = TextField()
+    date = DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.title
