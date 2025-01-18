@@ -63,19 +63,11 @@ class Shop(TemplateView):
 
 class Basket(TemplateView):
     template_name = 'basket.html'
-    extra_context = {'services':['Поездка за город с пьянкой и плясками под луной negligee      ... 15 000 руб./час ...'
-        , "Заправка под завязку фирменным коктейлем и виски из самовара ...  5 000 руб./чел. ..."
-        , 'ВНИМАНИЕ -- АКЦИЯ!!! Поездка в любом направлении без пьянки и песнопений ... Бесплатно!!! ...'
                                  ]}
 
 class Goods(TemplateView):
     template_name = 'price_list.html'
     goods = Game.objects.all()
     extra_context = {'goods': goods}
-    # extra_context = {'parts':["Руль спортивный из рогов антилопы гну ... извините, нет в продаже ..."
-    #                  , "Шланг бензиновый                      ... извините, не завезли    ..."
-    #                  , 'Коктейль фирменный "Эх, прокачу!" ... 500 руб. ...'
-    #                  , 'Виски "Johnny Driver" ... 750 руб. ...'
-    #                  ]}
 
 
