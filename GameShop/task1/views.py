@@ -63,7 +63,6 @@ class Shop(TemplateView):
 
 class Basket(TemplateView):
     template_name = 'basket.html'
-                                 ]}
 
 class Goods(TemplateView):
     template_name = 'price_list.html'
